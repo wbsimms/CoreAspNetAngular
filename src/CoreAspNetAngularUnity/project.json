@@ -2,14 +2,15 @@
   "userSecretsId": "aspnet-CoreAspNetAngularUnity-1d1b0b98-4ef2-45d5-8bfe-5a3bdf51f859",
 
   "dependencies": {
+    "CoreAspNetAngularUnity.DataAccess": "1.0.0-*",
     "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics": "1.0.0",
     "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "1.0.0",
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
     "Microsoft.AspNetCore.Mvc": "1.0.0",
     "Microsoft.AspNetCore.Razor.Tools": {
-      "version": "1.0.0-preview2-final",
-      "type": "build"
+        "version": "1.0.0-preview2-final",
+        "type": "build"
     },
     "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
     "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
@@ -58,9 +59,6 @@
   "frameworks": {
     "net461": {
         "dependencies": {
-            "CoreAspNetAngularUnity.DataAccess": {
-                "target": "project"
-            },
             "Logging.Lib": {
                 "target": "project"
             }

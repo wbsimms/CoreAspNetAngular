@@ -10,6 +10,9 @@ namespace CoreAspNetAngularUnity.DataAccess.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+	    public DbSet<Case> Cases { get; set; }
+	    public DbSet<Organization> Organizations { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
