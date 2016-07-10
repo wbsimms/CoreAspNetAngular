@@ -8,8 +8,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CoreAspNetAngular.DataAccess.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
-    {
+	public interface IApplicationDbContext
+	{
+		DbSet<Case> Cases { get; set; }
+		DbSet<Organization> Organizations { get; set; }
+	}
+
+	public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IApplicationDbContext
+	{
 	    public DbSet<Case> Cases { get; set; }
 	    public DbSet<Organization> Organizations { get; set; }
 

@@ -59,9 +59,6 @@
   "frameworks": {
     "net461": {
         "dependencies": {
-            "Logging.Lib": {
-                "target": "project"
-            }
         }
     }
   },

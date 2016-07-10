@@ -28,5 +28,8 @@ namespace CoreAspNetAngular.Models.AccountViewModels
 		public string FirstName { get; set; }
 		[Required, Display(Name = "LastName")]
 		public string LastName { get; set; }
+
+		[Required, Display(Name = "Orgnization Name")]
+		public string Organization { get; set; }
     }
 }

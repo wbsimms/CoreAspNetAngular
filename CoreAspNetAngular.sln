@@ -5,10 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CoreAspNetAngular", "src\CoreAspNetAngular\CoreAspNetAngular.xproj", "{C4A5C179-A805-47C6-A144-0187C74A4C38}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logging", "Logging", "{DFF5F6F2-E71D-4678-9236-666FC759A13E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Lib", "src\Logging\Logging.Lib\Logging.Lib.csproj", "{252D5230-5CC4-4AEF-B521-15B58753FD76}"
-EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CoreAspNetAngular.DataAccess", "src\CoreAspNetAngular.DataAccess\CoreAspNetAngular.DataAccess.xproj", "{1DF741F1-6977-47A1-81C1-C90888EA393F}"
 EndProject
 Global
@@ -21,10 +17,6 @@ Global
 		{C4A5C179-A805-47C6-A144-0187C74A4C38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4A5C179-A805-47C6-A144-0187C74A4C38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4A5C179-A805-47C6-A144-0187C74A4C38}.Release|Any CPU.Build.0 = Release|Any CPU
-		{252D5230-5CC4-4AEF-B521-15B58753FD76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{252D5230-5CC4-4AEF-B521-15B58753FD76}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{252D5230-5CC4-4AEF-B521-15B58753FD76}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{252D5230-5CC4-4AEF-B521-15B58753FD76}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1DF741F1-6977-47A1-81C1-C90888EA393F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1DF741F1-6977-47A1-81C1-C90888EA393F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DF741F1-6977-47A1-81C1-C90888EA393F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -32,8 +24,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{252D5230-5CC4-4AEF-B521-15B58753FD76} = {DFF5F6F2-E71D-4678-9236-666FC759A13E}
 	EndGlobalSection
 EndGlobal

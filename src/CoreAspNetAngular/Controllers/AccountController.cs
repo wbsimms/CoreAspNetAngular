@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using System.Xml.Xsl;
+using CoreAspNetAngular.DataAccess.Data;
 using CoreAspNetAngular.DataAccess.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -22,19 +24,22 @@ namespace CoreAspNetAngular.Controllers
         private readonly IEmailSender _emailSender;
         private readonly ISmsSender _smsSender;
         private readonly ILogger _logger;
+	    private readonly ApplicationDbContext context;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
             ISmsSender smsSender,
-            ILoggerFactory loggerFactory)
+            ILoggerFactory loggerFactory,
+			ApplicationDbContext applicationDbContext)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _smsSender = smsSender;
             _logger = loggerFactory.CreateLogger<AccountController>();
+	        this.context = applicationDbContext;
         }
 
         //
@@ -105,7 +110,30 @@ namespace CoreAspNetAngular.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+	            var org = context.Organizations.FirstOrDefault(x => x.Name == model.Organization);
+	            if (org != null)
+	            {
+					ModelState.AddModelError("Organization","Organization already exists");
+					return View(model);
+				}
+
+	            using (var trans = context.Database.BeginTransaction())
+	            {
+		            org = new Organization() {Name = model.Organization};
+
+					context.Organizations.Add(org);
+					context.SaveChanges();
+					trans.Commit();
+	            }
+
+
+	            var user = new ApplicationUser {
+						UserName = model.Email,
+						Email = model.Email,
+						FirstName = model.FirstName,
+						LastName = model.LastName,
+						Organization = org
+					};
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

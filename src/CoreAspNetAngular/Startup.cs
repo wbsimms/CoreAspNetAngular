@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using CoreAspNetAngular.DataAccess.Data;
 using CoreAspNetAngular.DataAccess.Models;
+using CoreAspNetAngular.DataAccess.Repositories;
 using CoreAspNetAngular.Services;
 
 namespace CoreAspNetAngular
@@ -79,6 +80,10 @@ namespace CoreAspNetAngular
 
             app.UseMvc(routes =>
             {
+	            routes.MapRoute(
+		            name: "testMonkey",
+		            template: "TestMonkey/{controller=TestMonkey}/{action=Index}/{id?}");
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

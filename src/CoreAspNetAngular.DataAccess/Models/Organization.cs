@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CoreAspNetAngular.DataAccess.Models
 {
-    public class Organization
+    public class Organization : Entity
     {
 		[Key]
 	    public int Id { get; set; }
